@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #00b7af;
+    --dark-bg: #10181f;
+    --light-text: #ffffff;
+    --secondary-gray: #6a7071;
+    --cell-bg: #1a252e;
+    --cell-hover: #243441;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.status {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    height: 2rem;
+    font-weight: 300;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    background-color: var(--secondary-gray);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    aspect-ratio: 1 / 1;
+}
+
+.cell {
+    background-color: var(--cell-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.cell:hover {
+    background-color: var(--cell-hover);
+}
+
+.cell.x {
+    color: var(--primary-color);
+}
+
+.cell.o {
+    color: #ffffff;
+}
+
+.cell.winner {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.mode-toggle {
+    font-size: 1rem;
+    color: var(--secondary-gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-toggle input {
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .cell {
+        font-size: 3rem;
+    }
+}
