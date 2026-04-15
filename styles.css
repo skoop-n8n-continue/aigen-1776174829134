@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #00b7af;
+    --primary-color: #ff8c00;
+    --accent-color: #ffd700;
     --dark-bg: #10181f;
     --light-text: #ffffff;
     --secondary-gray: #6a7071;
@@ -78,7 +79,7 @@ header h1 {
 }
 
 .cell.o {
-    color: #ffffff;
+    color: var(--accent-color);
 }
 
 .cell.winner {
